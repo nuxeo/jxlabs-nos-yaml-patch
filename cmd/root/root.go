@@ -8,7 +8,7 @@ import (
 	"github.com/jenkins-x/jx/pkg/cmd/opts"
 	"k8s.io/kubectl/pkg/cmd/patch"
 
-	"github.com/nxmatic/jxlabs-nos-json-patch/cmd/root/diff"
+	"github.com/nxmatic/jxlabs-nos-helmfile-patch/cmd/root/diff"
 
 	"github.com/spf13/cobra"
 )
