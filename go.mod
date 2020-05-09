@@ -99,7 +99,7 @@ require (
 	github.com/jbrukh/bayesian v0.0.0-20161210175230-bf3f261f9a9c // indirect
 	github.com/jenkins-x/draft-repo v0.0.0-20180417100212-2f66cc518135 // indirect
 	github.com/jenkins-x/golang-jenkins v0.0.0-20180919102630-65b83ad42314 // indirect
-	github.com/jenkins-x/jx v1.3.981-0.20200508204445-1b2ed275a50e
+	github.com/jenkins-x/jx v0.0.0-00010101000000-000000000000
 	github.com/jetstack/cert-manager v0.5.2 // indirect
 	github.com/jinzhu/gorm v1.9.1 // indirect
 	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a // indirect
