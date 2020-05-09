@@ -21,7 +21,7 @@ func NewCmdPatch(commonOpts *opts.CommonOptions) *cobra.Command {
 	}
 	command := &cobra.Command{
 		Use:     "patch",
-		Short:   "patch json",
+		Short:   "patch yaml using a computed patch",
 		Example: "patch patch.json",
 		Args:    cobra.MinimumNArgs(1),
 		Run: func(command *cobra.Command, args []string) {

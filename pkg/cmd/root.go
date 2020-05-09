@@ -13,7 +13,7 @@ import (
 func NewCmd(commonOpts *opts.CommonOptions) *cobra.Command {
 
 	cmd := &cobra.Command{
-		Use:   "json-patch",
+		Use:   "patch-helmfile",
 		Short: "compute diff and apply patch",
 		Long:  ``,
 		Run: func(cmd *cobra.Command, args []string) {

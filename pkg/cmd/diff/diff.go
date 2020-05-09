@@ -19,8 +19,8 @@ func NewCmdDiff(commonOpts *opts.CommonOptions) *cobra.Command {
 	}
 	command := &cobra.Command{
 		Use:     "diff",
-		Short:   "generate json patch from the diff between two json objects",
-		Example: "diff file1.json file2.json",
+		Short:   "generate patch from the diff between two yaml document",
+		Example: "diff original.yaml target.yaml",
 		Args:    cobra.MinimumNArgs(2),
 		Run: func(command *cobra.Command, args []string) {
 			options.Cmd = command
