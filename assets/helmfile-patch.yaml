@@ -1,0 +1,42 @@
+- op: add
+  path: /releases/1
+  value:
+    hooks:
+    - args:
+      - step
+      - scheduler
+      - config
+      - apply
+      - --direct=true
+      command: jx
+      events:
+      - postsync
+      showlogs: true
+    needs:
+    - jx/jenkins-x-crds
+- op: add
+  path: /releases/4
+  value:
+    needs:
+    - jx/jxlabs-nos-helmboot-resources
+- op: add
+  path: /releases/6
+  value:
+    needs:
+    - jx/tekton
+- op: add
+  path: /releases/9
+  value:
+    needs:
+    - jx/jenkins-x-crds
+- op: add
+  path: /releases/12
+  value:
+    needs:
+    - jx/jenkins-operator
+- op: add
+  path: /releases/14
+  value:
+    needs:
+    - jx/jenkins-x-crds
+

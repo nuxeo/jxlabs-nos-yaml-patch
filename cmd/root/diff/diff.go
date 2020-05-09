@@ -2,11 +2,10 @@ package diff
 
 import (
 	"fmt"
-	"io/ioutil"
 
 	"github.com/jenkins-x/jx/pkg/cmd/helper"
 	"github.com/jenkins-x/jx/pkg/cmd/opts"
-	"github.com/mattbaird/jsonpatch"
+	"github.com/nxmatic/jxlabs-nos-helmfile-patch/pkg/yaml"
 	"github.com/spf13/cobra"
 )
 
@@ -34,13 +33,7 @@ func NewCmdDiff(commonOpts *opts.CommonOptions) *cobra.Command {
 }
 
 func (o *DiffOptions) Run() {
-	bsOriginal, err := ioutil.ReadFile(o.Args[0])
+	bsPatch, err := yaml.CreatePatchFromFiles(o.Args[0], o.Args[1])
 	helper.CheckErr(err)
-	bsTarget, err := ioutil.ReadFile(o.Args[1])
-	helper.CheckErr(err)
-	patch, err := jsonpatch.CreatePatch(bsOriginal, bsTarget)
-	helper.CheckErr(err)
-	for _, operation := range patch {
-		fmt.Printf("%s\n", operation.Json())
-	}
+	fmt.Printf("%s\n", string(bsPatch))
 }

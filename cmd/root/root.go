@@ -1,12 +1,13 @@
-package cmd
+package root
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/nxmatic/jxlabs-nos-helmfile-diff/cmd/root/diff"
-	"github.com/nxmatic/jxlabs-nos-helmfile-diff/cmd/root/patch"
+	"github.com/nxmatic/jxlabs-nos-helmfile-patch/cmd/root/diff"
+	"github.com/nxmatic/jxlabs-nos-helmfile-patch/cmd/root/patch"
 
+	"github.com/jenkins-x/jx/pkg/cmd/clients"
 	"github.com/jenkins-x/jx/pkg/cmd/opts"
 
 	"github.com/spf13/cobra"
@@ -27,14 +28,14 @@ func Execute() {
 }
 
 func init() {
-	//	f := clients.NewFactory()
+	f := clients.NewFactory()
 	commonOptions := opts.NewCommonOptionsWithTerm(f, os.Stdin, os.Stdout, os.Stderr)
 
 	diffCmd := diff.NewCmdDiff(commonOptions)
 	rootCmd.AddCommand(diffCmd)
 
 	patchCmd := patch.NewCmdPatch(commonOptions)
-	rootCmd.AddCommand(diffCmd)
+	rootCmd.AddCommand(patchCmd)
 
 	cobra.OnInitialize(func() {
 		var err error
