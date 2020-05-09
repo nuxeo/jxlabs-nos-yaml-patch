@@ -178,11 +178,11 @@ require (
 )
 
 replace github.com/nxmatic/jxlabs-nos-helmfile-patch => ./
+replace github.com/jenkins-x/jx => ../jxlabs-nos-jx
 
 replace (
 	github.com/Azure/go-autorest => github.com/Azure/go-autorest v10.14.0+incompatible
 	github.com/banzaicloud/bank-vaults => github.com/banzaicloud/bank-vaults v0.0.0-20190508130850-5673d28c46bd
-	github.com/jenkins-x/jx => ../jxlabs-nos-jx
 	k8s.io/api => k8s.io/api v0.0.0-20190528110122-9ad12a4af326
 
 	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.0.0-20190528110544-fa58353d80f3

@@ -1,9 +1,16 @@
 package main
 
 import (
-	"github.com/nxmatic/jxlabs-nos-helmfile-patch/cmd/root"
+	"os"
+
+	"github.com/jenkins-x/jx/pkg/cmd/clients"
+	"github.com/jenkins-x/jx/pkg/cmd/opts"
+
+	"github.com/nxmatic/jxlabs-nos-helmfile-patch/pkg/cmd"
 )
 
 func main() {
-	root.Execute()
+	f := clients.NewFactory()
+	commonOptions := opts.NewCommonOptionsWithTerm(f, os.Stdin, os.Stdout, os.Stderr)
+	cmd.NewCmd(commonOptions).Execute()
 }
