@@ -6,7 +6,7 @@ import (
 	"github.com/jenkins-x/jx/pkg/cmd/clients"
 	"github.com/jenkins-x/jx/pkg/cmd/opts"
 
-	"github.com/nxmatic/jxlabs-nos-helmfile-patch/pkg/cmd"
+	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd"
 )
 
 func main() {

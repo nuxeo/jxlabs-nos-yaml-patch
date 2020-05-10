@@ -2,7 +2,7 @@
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
 SHELL := /bin/bash
-NAME := jxlabs-nos-helmfile-patch
+NAME := jxlabs-nos-yaml-patch
 BUILD_TARGET = build
 MAIN_SRC_FILE=cmd/main.go
 GO := GO111MODULE=on go
@@ -82,8 +82,10 @@ get-test-deps: ## Install test dependencies
 print-version: ## Print version
 	@echo $(VERSION)
 
-build: $(GO_DEPENDENCIES) ## Build for current OS
+build/$(NAME): $(GO_DEPENDENCIES) ## Build for current OS
 	CGO_ENABLED=$(CGO_ENABLED) $(GO) $(BUILD_TARGET) $(BUILDFLAGS) -o build/$(NAME) $(MAIN_SRC_FILE)
+
+build: build/$(NAME)
 
 build-all: $(GO_DEPENDENCIES) build make-reports-dir ## Build all files - runtime, all tests etc.
 	CGO_ENABLED=$(CGO_ENABLED) $(GOTEST) -run=nope -tags=integration -failfast -short ./... $(BUILDFLAGS)

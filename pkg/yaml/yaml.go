@@ -56,7 +56,7 @@ func CreatePatchFromBytes(bsOriginal ByteStream, bsTarget ByteStream) (ByteStrea
 }
 
 func PatchInplace(original string, sources []string) (ByteStream, error) {
-	file, err := os.Open(original)
+	file, err := os.OpenFile(original, os.O_RDWR, 0640)
 	if err != nil {
 		return nil, err
 	}
@@ -67,7 +67,6 @@ func PatchInplace(original string, sources []string) (ByteStream, error) {
 	file.Truncate(0)
 	_, err = file.Write(bsTarget)
 	return bsTarget, err
-
 }
 
 func Patch(file *os.File, sources []string) (ByteStream, error) {

@@ -1,4 +1,4 @@
-module github.com/nxmatic/jxlabs-nos-helmfile-patch
+module github.com/nxmatic/jxlabs-nos-yaml-patch
 
 go 1.14
 
@@ -74,9 +74,6 @@ require (
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8 // indirect
 	github.com/go-logr/zapr v0.1.0 // indirect
 	github.com/go-ole/go-ole v1.2.1 // indirect
-	github.com/go-openapi/analysis v0.17.2 // indirect
-	github.com/go-openapi/errors v0.17.2 // indirect
-	github.com/go-openapi/loads v0.17.2 // indirect
 	github.com/go-openapi/runtime v0.17.2 // indirect
 	github.com/go-openapi/validate v0.18.0 // indirect
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
@@ -177,7 +174,8 @@ require (
 	vbom.ml/util v0.0.0-20170409195630-256737ac55c4 // indirect
 )
 
-replace github.com/nxmatic/jxlabs-nos-helmfile-patch => ./
+replace github.com/nxmatic/jxlabs-nos-yaml-patch => ./
+
 replace github.com/jenkins-x/jx => ../jxlabs-nos-jx
 
 replace (
