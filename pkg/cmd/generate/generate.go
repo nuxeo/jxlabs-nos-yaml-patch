@@ -1,4 +1,4 @@
-package diff
+package generate
 
 import (
 	"fmt"
@@ -13,14 +13,14 @@ type DiffOptions struct {
 	*opts.CommonOptions
 }
 
-func NewCmdDiff(commonOpts *opts.CommonOptions) *cobra.Command {
+func NewCmd(commonOpts *opts.CommonOptions) *cobra.Command {
 	options := &DiffOptions{
 		CommonOptions: commonOpts,
 	}
 	command := &cobra.Command{
-		Use:     "diff",
-		Short:   "generate patch from the diff between two yaml document",
-		Example: "diff original.yaml target.yaml",
+		Use:     "generate",
+		Short:   "generate yaml patch from the diff between documents",
+		Example: "generate original.yaml target.yaml",
 		Args:    cobra.MinimumNArgs(2),
 		Run: func(command *cobra.Command, args []string) {
 			options.Cmd = command

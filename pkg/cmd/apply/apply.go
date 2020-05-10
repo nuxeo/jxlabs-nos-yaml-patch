@@ -1,4 +1,4 @@
-package patch
+package apply
 
 import (
 	"fmt"
@@ -15,14 +15,14 @@ type PatchOptions struct {
 	Inplace string
 }
 
-func NewCmdPatch(commonOpts *opts.CommonOptions) *cobra.Command {
+func NewCmd(commonOpts *opts.CommonOptions) *cobra.Command {
 	options := &PatchOptions{
 		CommonOptions: commonOpts,
 	}
 	command := &cobra.Command{
-		Use:     "patch",
-		Short:   "patch yaml using a computed patch",
-		Example: "patch patch.json",
+		Use:     "apply",
+		Short:   "apply yaml patch",
+		Example: "apply patch.json",
 		Args:    cobra.MinimumNArgs(1),
 		Run: func(command *cobra.Command, args []string) {
 			options.Cmd = command
@@ -31,7 +31,7 @@ func NewCmdPatch(commonOpts *opts.CommonOptions) *cobra.Command {
 		},
 	}
 
-	command.Flags().StringVarP(&options.Inplace, "inplace", "i", "", "the json file which will be modified in place")
+	command.Flags().StringVarP(&options.Inplace, "inplace", "i", "", "the yaml file which will be modified in place")
 
 	return command
 }

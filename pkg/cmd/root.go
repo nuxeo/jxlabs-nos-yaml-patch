@@ -4,8 +4,8 @@ import (
 	"github.com/jenkins-x/jx/pkg/cmd/opts"
 	"github.com/jenkins-x/jx/pkg/log"
 
-	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/diff"
-	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/patch"
+	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/apply"
+	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/generate"
 
 	"github.com/spf13/cobra"
 )
@@ -24,11 +24,8 @@ func NewCmd(commonOpts *opts.CommonOptions) *cobra.Command {
 		},
 	}
 
-	diffCmd := diff.NewCmdDiff(commonOpts)
-	cmd.AddCommand(diffCmd)
-
-	patchCmd := patch.NewCmdPatch(commonOpts)
-	cmd.AddCommand(patchCmd)
+	cmd.AddCommand(generate.NewCmd(commonOpts))
+	cmd.AddCommand(apply.NewCmd(commonOpts))
 
 	cobra.OnInitialize(func() {
 		var err error
