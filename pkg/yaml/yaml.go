@@ -65,6 +65,7 @@ func PatchInplace(original string, sources []string) (ByteStream, error) {
 		return nil, err
 	}
 	file.Truncate(0)
+	file.Seek(0, 0)
 	_, err = file.Write(bsTarget)
 	return bsTarget, err
 }
