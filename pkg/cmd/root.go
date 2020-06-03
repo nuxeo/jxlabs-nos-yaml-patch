@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/jenkins-x/jx/pkg/cmd/opts"
-	"github.com/jenkins-x/jx/pkg/log"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/opts"
+	"github.com/jenkins-x/jx/v2/pkg/log"
 
 	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/apply"
 	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/generate"

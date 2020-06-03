@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/jenkins-x/jx/pkg/cmd/clients"
-	"github.com/jenkins-x/jx/pkg/cmd/opts"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/clients"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/opts"
 
 	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd"
 )
