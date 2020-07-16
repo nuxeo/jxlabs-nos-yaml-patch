@@ -3,9 +3,9 @@ package generate
 import (
 	"fmt"
 
-	"github.com/jenkins-x/jx/pkg/cmd/helper"
-	"github.com/jenkins-x/jx/pkg/cmd/opts"
-	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/yaml"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/helper"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/opts"
+	"github.com/nuxeo/jxlabs-nos-yaml-patch/pkg/yaml"
 	"github.com/spf13/cobra"
 )
 

@@ -1,11 +1,11 @@
 package cmd
 
 import (
-	"github.com/jenkins-x/jx/pkg/cmd/opts"
-	"github.com/jenkins-x/jx/pkg/log"
+	"github.com/jenkins-x/jx/v2/pkg/cmd/opts"
+	"github.com/jenkins-x/jx-logging/pkg/log"
 
-	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/apply"
-	"github.com/nxmatic/jxlabs-nos-yaml-patch/pkg/cmd/generate"
+	"github.com/nuxeo/jxlabs-nos-yaml-patch/pkg/cmd/apply"
+	"github.com/nuxeo/jxlabs-nos-yaml-patch/pkg/cmd/generate"
 
 	"github.com/spf13/cobra"
 )
